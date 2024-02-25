@@ -11,6 +11,7 @@ img{
     max-width: 100%; 
     height:auto;
     border-radius: 8px;
+    transition: all 0.3s ease-in-out;
 }
 
 .gallery{
@@ -38,3 +39,30 @@ img{
     grid-column: 10 /span 3;
     grid-row: 1 / span 2;
 }
+.gallery-item:nth-child(5){
+    grid-column: 5 /span 6;
+    grid-row: 3 / span 2;
+}
+
+.gallery-item:nth-child(6){
+    grid-column:  10 /span 3;
+    grid-row: 3 / span 2;
+}
+
+.gallery-item:hover img{
+    transform: scale(1.05);
+    
+    z-index: 5;
+}
+
+@media (max-width: 768px) {
+    .gallery{
+        grid-template-columns: repeat(6,1fr);
+        
+    }
+    .gallery-item:nth-child(n){
+        grid-column: auto/span 6;
+        grid-row:auto;
+    }
+}
+
